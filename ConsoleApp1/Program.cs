@@ -1,4 +1,5 @@
-﻿namespace ConsoleApp1
+﻿
+namespace ConsoleApp1
 {
     class GiftBox
     {
@@ -9,32 +10,54 @@
     {
         static void Main(string[] args)
         {
-            GiftBox a = new GiftBox()
-            {
-                Letter = "잘지내지?",
-                Money = 100000
-            };
+            GiftBox addressA = GiftBoxMaker("A 친구야 잘지내지?", 110000);
+            GiftBox addressB = GiftBoxMaker("B 친구야 잘지내지?", 120000);
+            GiftBox addressC = GiftBoxMaker("C 친구야 잘지내지?", 130000);
+            
 
-            Console.WriteLine("A 송장내용");
-            Console.WriteLine(a.Letter);
-            Console.WriteLine(a.Money);
-            GiftBox 배송기사님 = a;
+            GiftBox[] giftBoxes = new GiftBox[3];
+            giftBoxes[0] = addressA;
+            giftBoxes[1] = addressB;
+            giftBoxes[2] = addressC;
 
-            Console.WriteLine("배송기사님 송장내용");
-            Console.WriteLine(배송기사님.Letter);
-            Console.WriteLine(배송기사님.Money);
+            Console.WriteLine("giftBox Array Count,:" + giftBoxes.Length);
 
-            a.Letter = "어떻게 지내고 있어?";
-            a.Money = 150000;
+            List<GiftBox> giftBoxesList = new List<GiftBox>();
+            giftBoxesList.Add(addressA);
+            giftBoxesList.Add(addressB);
+            giftBoxesList.Add(addressC);
 
-            Console.WriteLine("A 변경 이후 송장 내용");
-            Console.WriteLine(a.Letter);
-            Console.WriteLine(a.Money);
+            Console.WriteLine(giftBoxesList[2].Letter);
+            Console.WriteLine("giftbox List COunt :"+ giftBoxesList.Count);
+        }
+        
 
-            Console.WriteLine("배송기사님 송장 내용");
-            Console.WriteLine(배송기사님.Letter);
-            Console.WriteLine(배송기사님.Money);
+        private static void AddressC1()
+        {
+            throw new NotImplementedException();
         }
 
+        private static void AddressB1()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void AddressA1()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static GiftBox GiftBoxMaker(string letter, int money) 
+        {
+            GiftBox addressA = new GiftBox()
+            {
+                Letter = letter,
+                Money = money,
+            };
+
+            return addressA;
+
+            
+        }
     }
 }
