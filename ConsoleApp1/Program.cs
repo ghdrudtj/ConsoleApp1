@@ -20,17 +20,34 @@ namespace ConsoleApp1
             giftBoxes[1] = addressB;
             giftBoxes[2] = addressC;
 
-            Console.WriteLine("giftBox Array Count,:" + giftBoxes.Length);
+            Console.WriteLine("giftBox Array Count:" + giftBoxes.Length);
 
-            List<GiftBox> giftBoxesList = new List<GiftBox>();
-            giftBoxesList.Add(addressA);
-            giftBoxesList.Add(addressB);
-            giftBoxesList.Add(addressC);
+            List<GiftBox> giftBoxList = new List<GiftBox>();
+            giftBoxList.Add(addressA);
+            giftBoxList.Add(addressB);
+            giftBoxList.Add(addressC);
 
-            Console.WriteLine(giftBoxesList[2].Letter);
-            Console.WriteLine("giftbox List COunt :"+ giftBoxesList.Count);
+            
+            Console.WriteLine("giftbox List Count :"+ giftBoxList.Count);
+
+            for (int i = 0; i < giftBoxes.Length; i++) 
+            {
+                Console.WriteLine(giftBoxList[i].Letter);
+            }
+
+            foreach (GiftBox gift in giftBoxes)
+            {
+                Console.WriteLine(gift.Letter);
+            }
+            
+
         }
+
         
+
+            
+           
+            
 
         private static void AddressC1()
         {
