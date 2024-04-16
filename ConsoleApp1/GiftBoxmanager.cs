@@ -17,7 +17,8 @@ namespace GiftBoxManagerNamespace
             GiftBox addressC = GiftBoxMaker("C 친구야 잘지내지?", 130000, ITEM_GRADE.UNIQUE);
 
             Console.WriteLine($"addressC: letter : {addressC.Letter} item : {addressC.Grade}");
-
+            
+                
         }
 
         private GiftBox GiftBoxMaker(string letter, int money, ITEM_GRADE itemGrade)
